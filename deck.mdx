@@ -1,0 +1,167 @@
+export { vsDarkFull as theme } from "code-surfer";
+
+import React from "react";
+import { Appear, Image } from "mdx-deck";
+import {
+  CodeSurferColumnLayout,
+  Step,
+  Code,
+  vsDarkFull as hooksTheme,
+} from "code-surfer";
+
+## Deep Dive With `useCallback` and `useMemo`
+
+### [ReactJS ID](http://reactjs.id) @adibfirman
+
+---
+
+## Heeeyyy Folks...!!
+
+<ul>
+  <Appear>
+    <li>
+      I am{" "}
+      <a href="https://github.com/adibfirman">
+        Adib Firman
+      </a>
+    </li>
+    <li>
+      Frontend Engineer @{" "}
+      <a href="https://qlue.co.id">Qlue</a>
+    </li>
+  </Appear>
+</ul>
+
+---
+
+## My Talk is Not about 😫
+
+<ul>
+  <Appear>
+    <li>Basic of React</li>
+    <li>Basic of JS</li>
+    <li>Basic Hooks</li>
+    <li>CSS or HTML...??? 😒</li>
+  </Appear>
+</ul>
+
+---
+
+## My Talk will be 😃
+
+<ul>
+  <Appear>
+    <li>Two way discussion :)</li>
+    <li>and especially with these...</li>
+    <li>useCallback and useMemo</li>
+  </Appear>
+</ul>
+
+---
+
+### _useMemo_ & _useCallback_
+
+---
+
+### the equality of both is...
+
+---
+
+### return _memoization_
+
+---
+
+### What is memoization..??
+
+---
+
+> is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+> -- [Wikipedia](https://en.wikipedia.org/wiki/Memoization)
+
+---
+
+### Example Code...
+
+---
+
+<CodeSurferColumnLayout sizes={[1, 1]}>
+  <Step subtitle="we assume we have this function">
+    <Code
+      lang="jsx"
+      code={require("!!raw-loader!./src/memo.js").default}
+    />
+  </Step>
+  <Step subtitle="and use the function">
+    <Code
+      lang="jsx"
+      code={require("!!raw-loader!./src/memo-1.js").default}
+    />
+  </Step>
+</CodeSurferColumnLayout>
+
+---
+
+### and we will assume to use it again
+
+---
+
+<CodeSurferColumnLayout sizes={[1, 1]}>
+  <Step subtitle="using with the same arguments">
+    <Code
+      lang="jsx"
+      code={require("!!raw-loader!./src/memo-1.js").default}
+    />
+  </Step>
+</CodeSurferColumnLayout>
+
+---
+
+### What the meaning is...
+
+---
+
+### Garbabage collection will be run and your second code will created again
+
+---
+
+### How to memoize it...??
+
+---
+
+<CodeSurferColumnLayout sizes={[1, 1]}>
+  <Step subtitle="okay, we will create memoizer function">
+    <Code
+      lang="jsx"
+      code={require("!!raw-loader!./src/memo-2.js").default}
+    />
+  </Step>
+</CodeSurferColumnLayout>
+
+---
+
+<CodeSurferColumnLayout sizes={[1, 1]}>
+  <Step subtitle="and memoize the function">
+    <Code
+      lang="jsx"
+      code={require("!!raw-loader!./src/memo-3.js").default}
+    />
+  </Step>
+</CodeSurferColumnLayout>
+
+---
+
+### But the different in ops/sec [See the result](https://measurethat.net/Benchmarks/Show/7083/0/oke-testing-prim)
+
+---
+
+### and how _useCallback_ & _useMemo_ worked?
+
+---
+
+### Let's live code...
+
+---
+
+## That's all
+
+### Thank You
